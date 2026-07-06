@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
 <title>For Mimi</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -31,7 +35,7 @@ button:focus-visible{outline:3px solid var(--gold);outline-offset:3px;}
 
 /* ---------- grain helper ---------- */
 .grained{position:relative;}
-.grained::before{content:"";position:absolute;inset:0;background:var(--grain);background-size:140px 140px;opacity:.045;pointer-events:none;border-radius:inherit;}
+.grained::before{content:"";position:absolute;top:0;right:0;bottom:0;left:0;background:var(--grain);background-size:140px 140px;opacity:.045;pointer-events:none;border-radius:inherit;}
 
 /* ================= ENVELOPE SCENE ================= */
 #envScene{
@@ -41,14 +45,14 @@ button:focus-visible{outline:3px solid var(--gold);outline-offset:3px;}
   transition:opacity .4s ease;
 }
 #envScene::before{ /* desk vignette */
-  content:"";position:absolute;inset:0;pointer-events:none;
+  content:"";position:absolute;top:0;right:0;bottom:0;left:0;pointer-events:none;
   background:radial-gradient(120% 90% at 50% 32%, rgba(255,255,255,.04) 0%, transparent 45%, rgba(0,0,0,.30) 100%);
 }
 #envScene::after{ /* desk felt tooth */
-  content:"";position:absolute;inset:0;pointer-events:none;
+  content:"";position:absolute;top:0;right:0;bottom:0;left:0;pointer-events:none;
   background:var(--grain);background-size:140px 140px;opacity:.05;
 }
-.st-done #envScene{opacity:0;pointer-events:none;position:fixed;inset:0;z-index:3;}
+.st-done #envScene{opacity:0;pointer-events:none;position:fixed;top:0;right:0;bottom:0;left:0;z-index:3;}
 #envScene[hidden]{display:none !important;}
 #letterPage[hidden]{display:none;}
 
@@ -72,7 +76,7 @@ button:focus-visible{outline:3px solid var(--gold);outline-offset:3px;}
   cursor:pointer;
 }
 .env-face{
-  position:absolute;inset:0;border-radius:3px;
+  position:absolute;top:0;right:0;bottom:0;left:0;border-radius:3px;
   background:var(--ecru);
   background-image:repeating-linear-gradient(0deg, rgba(60,45,20,.016) 0 1px, transparent 1px 4px);
   box-shadow:inset 0 0 0 1px rgba(217,204,180,.55),
@@ -105,7 +109,7 @@ button:focus-visible{outline:3px solid var(--gold);outline-offset:3px;}
 
 /* -- back face -- */
 .throat{
-  position:absolute;inset:0;
+  position:absolute;top:0;right:0;bottom:0;left:0;
   clip-path:polygon(0 0,100% 0,50% 56%);
   background:linear-gradient(180deg,#c8bb9f 0%,#ddd1b6 60%,#e6dcc6 100%);
   box-shadow:inset 0 6px 12px rgba(0,0,0,.18);
@@ -118,41 +122,41 @@ button:focus-visible{outline:3px solid var(--gold);outline-offset:3px;}
   z-index:2;
 }
 .mini-letter::after{ /* the card face: Mimi, queen for a day */
-  content:"";position:absolute;inset:4.5% 4.5% 6.5%;
+  content:"";position:absolute;top:4.5%;right:4.5%;bottom:6.5%;left:4.5%;
   background:var(--portrait);background-size:cover;background-position:50% 25%;
 }
 .st-rise .mini-letter{transform:translateY(-74%);}
 .pocket{
-  position:absolute;inset:0;z-index:3;
+  position:absolute;top:0;right:0;bottom:0;left:0;z-index:3;
   clip-path:polygon(0 0,50% 56%,100% 0,100% 100%,0 100%);
   background:var(--ecru);
   background-image:repeating-linear-gradient(0deg, rgba(60,45,20,.016) 0 1px, transparent 1px 4px);
 }
-.pocket svg{position:absolute;inset:0;width:100%;height:100%;}
+.pocket svg{position:absolute;top:0;right:0;bottom:0;left:0;width:100%;height:100%;}
 .flap-wrap{
-  position:absolute;inset:0;z-index:4;
+  position:absolute;top:0;right:0;bottom:0;left:0;z-index:4;
   perspective:900px;
 }
 .st-rise .flap-wrap,.st-done .flap-wrap{z-index:1;}
 .flap{
-  position:absolute;inset:0;
+  position:absolute;top:0;right:0;bottom:0;left:0;
   transform-origin:50% 0;
   transition:transform .62s cubic-bezier(.2,.7,.15,1);
 }
 .flap-paper{
-  position:absolute;inset:0;
+  position:absolute;top:0;right:0;bottom:0;left:0;
   clip-path:polygon(0 0,100% 0,50% 56%);
   background:linear-gradient(200deg,#f5edda 0%,var(--ecru) 55%,#ecdfc6 100%);
   filter:drop-shadow(0 2px 3px rgba(0,0,0,.16));
 }
 .st-rise .flap-paper,.st-done .flap-paper{filter:none;}
 .pocket::after,.flap-paper::after{
-  content:"";position:absolute;inset:0;
+  content:"";position:absolute;top:0;right:0;bottom:0;left:0;
   background:var(--grain);background-size:140px 140px;
   opacity:.045;pointer-events:none;
 }
 .st-flap .flap{transform:rotateX(-164deg);}
-.flap-paper svg.seams{position:absolute;inset:0;width:100%;height:100%;}
+.flap-paper svg.seams{position:absolute;top:0;right:0;bottom:0;left:0;width:100%;height:100%;}
 
 /* -- wax seal (two halves) -- */
 .seal-upper,.seal-lower{
@@ -200,7 +204,7 @@ button:focus-visible{outline:3px solid var(--gold);outline-offset:3px;}
   transition:opacity .55s ease,transform .55s cubic-bezier(.22,1,.36,1);
 }
 #letterPage::after{
-  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  content:"";position:fixed;top:0;right:0;bottom:0;left:0;pointer-events:none;z-index:0;
   background:radial-gradient(120% 90% at 50% 20%, rgba(255,255,255,.03) 0%, transparent 45%, rgba(0,0,0,.28) 100%);
 }
 .sheet{
@@ -313,6 +317,8 @@ button:focus-visible{outline:3px solid var(--gold);outline-offset:3px;}
 }
 @page{margin:13mm;}
 </style>
+</head>
+<body>
 
 <div id="scene">
 
@@ -673,3 +679,5 @@ button:focus-visible{outline:3px solid var(--gold);outline-offset:3px;}
   });
 })();
 </script>
+</body>
+</html>
